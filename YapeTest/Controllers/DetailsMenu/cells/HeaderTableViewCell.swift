@@ -78,7 +78,6 @@ class HeaderTableViewCell: UITableViewCell {
         
     }
     func configLabels() {
-       // lblNameDetail.font = UIFont.systemFont(ofSize: 35.0)
         lblNameDetail.font = UIFont.boldSystemFont(ofSize: 35.0)
         lblNameDetail.textColor = UIColor.black
         lblNameDetail.numberOfLines = 0
@@ -86,8 +85,6 @@ class HeaderTableViewCell: UITableViewCell {
         lblTitleDetail.font = UIFont.systemFont(ofSize: 20.0)
         lblTitleDetail.textColor = UIColor.gray
         lblTitleDetail.numberOfLines = 0
-        
-        //lblPriceDetail.font =  UIFont.systemFont(ofSize: 25.0)
         lblPriceDetail.font = UIFont.boldSystemFont(ofSize: 25.0)
         lblPriceDetail.textColor = UIColor.orange
         lblPriceDetail.numberOfLines = 0

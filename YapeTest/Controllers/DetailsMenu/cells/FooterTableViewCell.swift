@@ -40,9 +40,14 @@ class FooterTableViewCell: UITableViewCell {
         self.backgroundColor = .white
         addSubview(btnContinuar)
         btnContinuar.topAnchor.constraint(equalTo: topAnchor, constant: 30).isActive = true
-        btnContinuar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15).isActive = true
+    
+        //btnContinuar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40).isActive = true
+        
+        btnContinuar.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        btnContinuar.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        
         btnContinuar.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        btnContinuar.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        btnContinuar.widthAnchor.constraint(equalToConstant: 250).isActive = true
     }
     
     

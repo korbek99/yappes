@@ -112,6 +112,7 @@ extension DetailsViewController:  UITableViewDelegate, UITableViewDataSource {
         }
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "FooterTableViewCell") as! FooterTableViewCell
+            cell.isUserInteractionEnabled = false
             cell.heightAnchor.constraint(equalToConstant: 120.0).isActive = true
             return cell
         }

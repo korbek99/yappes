@@ -6,7 +6,10 @@
 //
 
 import UIKit
-
+//protocol MenuViewControllerDisplayLogic: AnyObject {
+//     func startloading()
+//     func stoploading()
+//}
 class MenuViewController: UIViewController {
 
     // MARK: - IBOutlets
@@ -37,9 +40,11 @@ class MenuViewController: UIViewController {
     // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        startloading()
         view.backgroundColor = UIColor.white
         setUpTableView()
         setupVM()
+      
     }
     
     // MARK: - Functions
@@ -62,6 +67,22 @@ class MenuViewController: UIViewController {
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
+    
+    func startloading(){
+      
+        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.gray
+        loadingIndicator.startAnimating();
+
+        alert.view.addSubview(loadingIndicator)
+        self.present(alert, animated: true, completion: nil)
+    }
+     func stoploading(){
+       
+        self.dismiss(animated: false, completion: nil)
+    }
 }
 
 extension MenuViewController:  UITableViewDelegate, UITableViewDataSource {
@@ -71,7 +92,7 @@ extension MenuViewController:  UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        startloading()
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MenuTableViewCell") as? MenuTableViewCell else { return UITableViewCell() }
         
         let articleVM = self.menuListVM.articleAtIndex(indexPath.row)
@@ -79,15 +100,17 @@ extension MenuViewController:  UITableViewDelegate, UITableViewDataSource {
         
         if let imageURL = URL(string:paths) {
             print(imageURL)
-            //DispatchQueue.global().async {
+            DispatchQueue.global().async { [self] in
+                
                 let data = try? Data(contentsOf: imageURL)
                 if let data = data {
                     let image = UIImage(data: data)
-                    //DispatchQueue.main.async {
+                    DispatchQueue.main.async {
                         cell.imgMenu.image =  image
-                    //}
+                        stoploading()
+                    }
                 }
-           // }
+            }
         }
   
         cell.lblName.text = articleVM.productosMenu[indexPath.row].name

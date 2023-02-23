@@ -42,6 +42,25 @@ class MapViewController: UIViewController {
         mapkits.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         mapkits.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
+    
+    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+        print("Error: \(error.localizedDescription)")
+    }
+    
+    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        print("The authorization status of location " + "services is changed to: ")
+        switch CLLocationManager.authorizationStatus(){
+        case .denied:
+            print("Denied")
+        case .notDetermined:
+            print("Not determined")
+        case .restricted:
+            print("Restricted")
+        default:
+            print("Authorized")
+        }
+    }
+    
     func loadMap(){
         let lon = Double(lontitudMap!)
         let lat = Double(latitudMap!)

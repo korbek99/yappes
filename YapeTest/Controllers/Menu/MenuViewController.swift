@@ -6,10 +6,6 @@
 //
 
 import UIKit
-//protocol MenuViewControllerDisplayLogic: AnyObject {
-//     func startloading()
-//     func stoploading()
-//}
 class MenuViewController: UIViewController {
 
     // MARK: - IBOutlets
@@ -99,7 +95,6 @@ extension MenuViewController:  UITableViewDelegate, UITableViewDataSource {
         let paths = String(articleVM.productosMenu[indexPath.row].image)
         
         if let imageURL = URL(string:paths) {
-            print(imageURL)
             DispatchQueue.global().async { [self] in
                 
                 let data = try? Data(contentsOf: imageURL)

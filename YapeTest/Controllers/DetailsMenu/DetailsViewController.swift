@@ -100,7 +100,7 @@ extension DetailsViewController:  UITableViewDelegate, UITableViewDataSource {
             cell.heightAnchor.constraint(equalToConstant: 280.0).isActive = true
             cell.isUserInteractionEnabled = false
             if let imageURL = URL(string:imageString!) {
-                print(imageURL)
+           
                     let data = try? Data(contentsOf: imageURL)
                     if let data = data {
                         let image = UIImage(data: data)
@@ -120,7 +120,7 @@ extension DetailsViewController:  UITableViewDelegate, UITableViewDataSource {
   
     // MARK: - Actions 
     @objc func irMapaMarket(sender: UIBarButtonItem) {
-        let storyboard = self.storyboard?.instantiateViewController(identifier: "MapViewController") as! MapViewController
+        let storyboard = self.storyboard?.instantiateViewController(identifier: "MapiViewController") as! MapiViewController
         storyboard.latitudMap = latitud
         storyboard.lontitudMap = lontitud
         storyboard.lugarString = nombreString

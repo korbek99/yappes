@@ -54,6 +54,35 @@
             </objects>
             <point key="canvasLocation" x="2343" y="65"/>
         </scene>
+        <!--Mapi View Controller-->
+        <scene sceneID="hzG-xd-8MQ">
+            <objects>
+                <viewController storyboardIdentifier="MapiViewController" id="TCj-KS-vV7" customClass="MapiViewController" customModule="YapeTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fRS-Dp-bth">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="SD7-tG-D5R">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zYv-VP-CIR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SD7-tG-D5R" firstAttribute="centerX" secondItem="fRS-Dp-bth" secondAttribute="centerX" id="RAd-th-TNb"/>
+                            <constraint firstItem="SD7-tG-D5R" firstAttribute="leading" secondItem="zYv-VP-CIR" secondAttribute="leading" id="tGY-Hl-m76"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="SD7-tG-D5R" secondAttribute="bottom" id="uI5-bT-Abc"/>
+                            <constraint firstItem="SD7-tG-D5R" firstAttribute="top" secondItem="fRS-Dp-bth" secondAttribute="topMargin" id="xpJ-O3-nzh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapas" destination="SD7-tG-D5R" id="dfa-CB-HLN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rid-yo-koH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3127.536231884058" y="65.625"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bxf-pi-I9l">
             <objects>

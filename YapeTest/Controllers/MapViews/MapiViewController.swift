@@ -38,7 +38,12 @@ class MapiViewController: UIViewController {
         mapas.setZoomByDeltas(delta: 0.5, animated: true)
         updateUI()
     }
-
+    func centerMapOnLocation(_ location: CLLocation, mapView: MKMapView) {
+        let regionRadius: CLLocationDistance = 1000
+        let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
+                                                  latitudinalMeters: regionRadius * 2.0, longitudinalMeters: regionRadius * 2.0)
+        mapView.setRegion(coordinateRegion, animated: true)
+    }
     func updateUI() {
         let longitudes = Double(lontitudMap!)
         let latitudes = Double(latitudMap!)

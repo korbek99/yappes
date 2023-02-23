@@ -52,7 +52,6 @@ class MenuTableViewCell: UITableViewCell {
     }
     func configLabels() {
         
-        //lblName.font = UIFont.systemFont(ofSize: 20.0)
         lblName.font = UIFont.boldSystemFont(ofSize: 20.0)
         lblName.textColor = UIColor.black
         lblName.numberOfLines = 0
@@ -61,8 +60,6 @@ class MenuTableViewCell: UITableViewCell {
         lbldescrip.textColor = UIColor.gray
         lbldescrip.numberOfLines = 0
         
-        
-        //lblPrice.font =  UIFont.systemFont(ofSize: 20.0)
         lblPrice.font = UIFont.boldSystemFont(ofSize: 20.0)
         lblPrice.textColor = UIColor.orange
         lblPrice.numberOfLines = 0

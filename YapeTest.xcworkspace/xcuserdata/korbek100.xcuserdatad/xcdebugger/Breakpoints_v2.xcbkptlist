@@ -16,8 +16,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "46"
             endingLineNumber = "46"
-            landmarkName = "MenuViewController"
-            landmarkType = "3">
+            landmarkName = "setupVM()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -192,7 +192,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "98"
             endingLineNumber = "98"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

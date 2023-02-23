@@ -1,0 +1,6 @@
+framework module Pods_YapeTest {
+  umbrella header "Pods-YapeTest-umbrella.h"
+
+  export *
+  module * { export * }
+}

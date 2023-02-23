@@ -1,0 +1,55 @@
+//
+//  BodyTableViewCell.swift
+//  YapeTest
+//
+//  Created by Jose David Bustos H on 17-02-23.
+//
+
+import UIKit
+
+class BodyTableViewCell: UITableViewCell {
+
+    override func prepareForReuse() {
+    }
+    // MARK: - IBOutlets
+    lazy var imgMenuDetail: UIImageView = {
+        let image: UIImageView = .init()
+        image.contentMode = .scaleAspectFit
+        image.layer.masksToBounds = true
+        image.layer.cornerRadius = 20.0
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
+    // MARK: - init
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupUIUX()
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    // MARK: - Functions
+    func setupUIUX() {
+        self.backgroundColor = .white
+        addSubview(imgMenuDetail)
+        
+        imgMenuDetail.topAnchor.constraint(equalTo: topAnchor, constant: 5).isActive = true
+        imgMenuDetail.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15).isActive = true
+        imgMenuDetail.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15).isActive = true
+        imgMenuDetail.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 5).isActive = true
+        
+        imgMenuDetail.heightAnchor.constraint(equalToConstant: 250).isActive = true
+        imgMenuDetail.widthAnchor.constraint(equalToConstant: 250).isActive = true
+    }
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        // Configure the view for the selected state
+    }
+
+}

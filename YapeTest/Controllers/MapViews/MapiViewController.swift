@@ -20,9 +20,17 @@ class MapiViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadMap()
+        setupMapUI()
     }
 
-
+    func setupMapUI(){
+        mapas.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(mapas)
+        mapas.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        mapas.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        mapas.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        mapas.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    }
     func loadMap(){
         let lon = Double(lontitudMap!)
         let lat = Double(latitudMap!)

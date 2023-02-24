@@ -6,9 +6,15 @@
 //
 
 import UIKit
-
 class DetailsViewController: UIViewController {
-
+    
+    var nombreString:String?
+    var decripString:String?
+    var imageString:String?
+    var precio:String?
+    var latitud:String?
+    var lontitud:String?
+    
     // MARK: - IBOutlets
     lazy var tableView: UITableView = {
         let table: UITableView = .init()
@@ -30,14 +36,6 @@ class DetailsViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-
-    var nombreString:String?
-    var decripString:String?
-    var imageString:String?
-    var precio:String?
-    var latitud:String?
-    var lontitud:String?
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,26 +96,15 @@ extension DetailsViewController:  UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderTableViewCell") as! HeaderTableViewCell
-                    cell.imgStoreIcon.image = UIImage(named: "tienda")
-                    cell.isUserInteractionEnabled = false
-                    cell.lblNameDetail.text =  String(nombreString!)
-                    cell.lblTitleDetail.text = String(decripString!)
-                    cell.lblPriceDetail.text = "Precio : " + String(precio!)
-                    cell.heightAnchor.constraint(equalToConstant: 200.0).isActive = true
+            cell.heightAnchor.constraint(equalToConstant: 200.0).isActive = true
+            cell.configure(HeaderTableViewModel(name: String(nombreString!), title: String(decripString!), precio: String(precio!)))
                     return cell
                 }
         else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "BodyTableViewCell") as! BodyTableViewCell
             cell.heightAnchor.constraint(equalToConstant: 280.0).isActive = true
             cell.isUserInteractionEnabled = false
-            if let imageURL = URL(string:imageString!) {
-           
-                    let data = try? Data(contentsOf: imageURL)
-                    if let data = data {
-                        let image = UIImage(data: data)
-                        cell.imgMenuDetail.image =  image
-                    }
-            }
+            cell.configure(BodyTableViewModel(urlImg: imageString!))
            
             return cell
         }

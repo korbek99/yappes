@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  YapeTest
+
+  Created by Jose David Bustos H on 23-02-23.
+  
+*/
+LOADING_DESCRIP = "Please wait...";
+MAPA_BUTTON_DESC = "Ver Mapa";
+

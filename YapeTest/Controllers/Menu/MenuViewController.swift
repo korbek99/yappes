@@ -94,7 +94,6 @@ extension MenuViewController:  UITableViewDelegate, UITableViewDataSource {
         
         if let imageURL = URL(string:paths) {
             DispatchQueue.global().async { [self] in
-                
                 let data = try? Data(contentsOf: imageURL)
                 if let data = data {
                     let image = UIImage(data: data)

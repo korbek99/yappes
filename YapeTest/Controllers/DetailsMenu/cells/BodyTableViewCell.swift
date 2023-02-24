@@ -6,9 +6,15 @@
 //
 
 import UIKit
-
+struct BodyTableViewModel {
+    let urlImg: String
+    
+    init(urlImg: String) {
+        self.urlImg = urlImg
+    }
+}
 class BodyTableViewCell: UITableViewCell {
-
+ 
     override func prepareForReuse() {
     }
     // MARK: - IBOutlets
@@ -28,6 +34,18 @@ class BodyTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func configure(_ model: BodyTableViewModel) {
+        if let imageURL = URL(string: model.urlImg) {
+       
+                let data = try? Data(contentsOf: imageURL)
+                if let data = data {
+                    let image = UIImage(data: data)
+                    imgMenuDetail.image =  image
+                }
+        }
+    }
+    
     // MARK: - Functions
     func setupUIUX() {
         self.backgroundColor = .white

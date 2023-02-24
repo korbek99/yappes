@@ -28,6 +28,7 @@
 		57822D1629A80C5D002575EB /* MapiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57822D1529A80C5D002575EB /* MapiViewController.swift */; };
 		57822D1B29A814B1002575EB /* endpointsDev.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57822D1A29A814B1002575EB /* endpointsDev.plist */; };
 		57822D2029A81536002575EB /* APIEndpointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57822D1F29A81536002575EB /* APIEndpointModel.swift */; };
+		57822D2829A84F71002575EB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 57822D2729A84F71002575EB /* Localizable.strings */; };
 		70068E2EE9FAC9C53FC91E71 /* Pods_YapeTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1499BE9805717867D7E7C150 /* Pods_YapeTest.framework */; };
 		ED94C43EE073F9B42587CC8F /* Pods_YapeTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A8F59EA22A6355B052E7F3 /* Pods_YapeTestTests.framework */; };
 /* End PBXBuildFile section */
@@ -78,6 +79,7 @@
 		57822D1529A80C5D002575EB /* MapiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapiViewController.swift; sourceTree = "<group>"; };
 		57822D1A29A814B1002575EB /* endpointsDev.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = endpointsDev.plist; sourceTree = "<group>"; };
 		57822D1F29A81536002575EB /* APIEndpointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpointModel.swift; sourceTree = "<group>"; };
+		57822D2729A84F71002575EB /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		70A8F59EA22A6355B052E7F3 /* Pods_YapeTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YapeTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C9169F551EA0D6797FFA5CD /* Pods-YapeTest-YapeTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YapeTest-YapeTestUITests.debug.xcconfig"; path = "Target Support Files/Pods-YapeTest-YapeTestUITests/Pods-YapeTest-YapeTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		98F2F68229847AED8AE4B9D3 /* Pods_YapeTest_YapeTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YapeTest_YapeTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +154,7 @@
 				57822AB029A01346002575EB /* LaunchScreen.storyboard */,
 				57822AB329A01346002575EB /* Info.plist */,
 				57822D1A29A814B1002575EB /* endpointsDev.plist */,
+				57822D2729A84F71002575EB /* Localizable.strings */,
 			);
 			path = YapeTest;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57822D2829A84F71002575EB /* Localizable.strings in Resources */,
 				57822AB229A01346002575EB /* LaunchScreen.storyboard in Resources */,
 				57822D1B29A814B1002575EB /* endpointsDev.plist in Resources */,
 				57822AAF29A01346002575EB /* Assets.xcassets in Resources */,

@@ -6,8 +6,18 @@
 //
 
 import UIKit
-
+struct HeaderTableViewModel {
+    let name: String
+    let title: String
+    let precio: String
+    init(name: String, title: String, precio: String) {
+        self.name = name
+        self.title = title
+        self.precio = precio
+    }
+}
 class HeaderTableViewCell: UITableViewCell {
+
     override func prepareForReuse() {
     }
     // MARK: - IBOutlets
@@ -48,6 +58,14 @@ class HeaderTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     // MARK: - Functions
+    
+    func configure(_ model: HeaderTableViewModel) {
+        imgStoreIcon.image = UIImage(named: "tienda")
+        lblNameDetail.text = model.name
+        lblTitleDetail.text = model.title
+        lblPriceDetail.text = "Precio : " + model.precio
+    }
+    
     func setupUIUX() {
         self.backgroundColor = .white
         addSubview(imgStoreIcon)

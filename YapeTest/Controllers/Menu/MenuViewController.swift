@@ -23,11 +23,11 @@ class MenuViewController: UIViewController {
     // MARK: - init
     init() {
         super.init(nibName: nil, bundle: nil)
-        //setup()
+        
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        //setup()
+        
     }
     
     // MARK: - call MenuListViewModel
@@ -64,19 +64,17 @@ class MenuViewController: UIViewController {
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
-    func startloading(){
-      
+    private func startloading(){
         let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
         loadingIndicator.hidesWhenStopped = true
         loadingIndicator.style = UIActivityIndicatorView.Style.gray
         loadingIndicator.startAnimating();
-
         alert.view.addSubview(loadingIndicator)
         self.present(alert, animated: true, completion: nil)
     }
-     func stoploading(){
-       
+    
+    private func stoploading(){
         self.dismiss(animated: false, completion: nil)
     }
 }

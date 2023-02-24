@@ -55,7 +55,7 @@ class DetailsViewController: UIViewController {
             action: #selector(irMapaMarket(sender:))
         )
     }
-    func setUpTableViewregister() {
+    private func setUpTableViewregister() {
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
         tableView.register(HeaderTableViewCell.self, forCellReuseIdentifier: "HeaderTableViewCell")
@@ -71,7 +71,18 @@ class DetailsViewController: UIViewController {
          tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
          tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
      }
-
+    private func goToMapaView(){
+        let storyboard = self.storyboard?.instantiateViewController(identifier: "MapiViewController") as! MapiViewController
+        storyboard.latitudMap = latitud
+        storyboard.lontitudMap = lontitud
+        storyboard.lugarString = nombreString
+        self.navigationController?.pushViewController(storyboard, animated: true)
+    }
+    
+    // MARK: - Actions
+    @objc func irMapaMarket(sender: UIBarButtonItem) {
+        goToMapaView()
+    }
 }
 
 extension DetailsViewController:  UITableViewDelegate, UITableViewDataSource {
@@ -116,14 +127,5 @@ extension DetailsViewController:  UITableViewDelegate, UITableViewDataSource {
             cell.heightAnchor.constraint(equalToConstant: 120.0).isActive = true
             return cell
         }
-    }
-  
-    // MARK: - Actions 
-    @objc func irMapaMarket(sender: UIBarButtonItem) {
-        let storyboard = self.storyboard?.instantiateViewController(identifier: "MapiViewController") as! MapiViewController
-        storyboard.latitudMap = latitud
-        storyboard.lontitudMap = lontitud
-        storyboard.lugarString = nombreString
-        self.navigationController?.pushViewController(storyboard, animated: true)
     }
 }

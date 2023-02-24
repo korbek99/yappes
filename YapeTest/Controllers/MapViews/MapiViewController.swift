@@ -23,7 +23,7 @@ class MapiViewController: UIViewController {
         setupMapUI()
     }
 
-    func setupMapUI(){
+    private  func setupMapUI(){
         mapas.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(mapas)
         mapas.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -31,7 +31,7 @@ class MapiViewController: UIViewController {
         mapas.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         mapas.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
-    func loadMap(){
+    private  func loadMap(){
         let lon = Double(lontitudMap!)
         let lat = Double(latitudMap!)
         let mapi = MKPointAnnotation()
@@ -46,13 +46,13 @@ class MapiViewController: UIViewController {
         mapas.setZoomByDeltas(delta: 0.5, animated: true)
         updateUI()
     }
-    func centerMapOnLocation(_ location: CLLocation, mapView: MKMapView) {
+    private func centerMapOnLocation(_ location: CLLocation, mapView: MKMapView) {
         let regionRadius: CLLocationDistance = 1000
         let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
                                                   latitudinalMeters: regionRadius * 2.0, longitudinalMeters: regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
     }
-    func updateUI() {
+    private func updateUI() {
         let longitudes = Double(lontitudMap!)
         let latitudes = Double(latitudMap!)
         let oahuCenter = CLLocation(latitude: latitudes!, longitude: longitudes!)

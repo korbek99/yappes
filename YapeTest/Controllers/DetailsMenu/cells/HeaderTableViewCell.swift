@@ -18,6 +18,8 @@ struct HeaderTableViewModel {
 }
 class HeaderTableViewCell: UITableViewCell {
 
+   
+    
     override func prepareForReuse() {
     }
     // MARK: - IBOutlets

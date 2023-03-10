@@ -8,6 +8,12 @@
 import UIKit
 class MenuViewController: UIViewController {
 
+    var listMenus = [Product]()
+    var searching = false
+    var searchedMenu =  [Product]()
+    
+    let searchController = UISearchController(searchResultsController: nil)
+    
     // MARK: - IBOutlets
     lazy var tableView: UITableView = {
         let table: UITableView = .init()
@@ -40,7 +46,23 @@ class MenuViewController: UIViewController {
         view.backgroundColor = UIColor.white
         setUpTableView()
         setupVM()
+        configureSearchController()
       
+    }
+    
+    func configureSearchController(){
+        
+        searchController.loadViewIfNeeded()
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.enablesReturnKeyAutomatically  = false
+        searchController.searchBar.returnKeyType = UIReturnKeyType.done
+        self.navigationItem.searchController = searchController
+        self.navigationItem.hidesSearchBarWhenScrolling = false
+        definesPresentationContext = true
+        searchController.searchBar.placeholder = "Buscar por nombre"
+        
     }
     
     // MARK: - Functions
@@ -79,35 +101,63 @@ class MenuViewController: UIViewController {
     }
 }
 
-extension MenuViewController:  UITableViewDelegate, UITableViewDataSource {
+extension MenuViewController:  UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchBarDelegate {
     // MARK: - tableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.menuListVM == nil ? 0 : self.menuListVM.numberOfSections
+        
+        if searching{
+            return searchedMenu.count
+        }else{
+            return self.menuListVM == nil ? 0 : self.menuListVM.numberOfSections
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        startloading()
+        //startloading()
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MenuTableViewCell") as? MenuTableViewCell else { return UITableViewCell() }
         
-        let articleVM = self.menuListVM.articleAtIndex(indexPath.row)
-        let paths = String(articleVM.productosMenu[indexPath.row].image)
-        
-        if let imageURL = URL(string:paths) {
-            DispatchQueue.global().async { [self] in
-                let data = try? Data(contentsOf: imageURL)
-                if let data = data {
-                    let image = UIImage(data: data)
-                    DispatchQueue.main.async {
-                        cell.imgMenu.image =  image
-                        stoploading()
+        if searching {
+            let articleVM = searchedMenu[indexPath.row]
+            let paths = String(searchedMenu[indexPath.row].image)
+            if let imageURL = URL(string:paths) {
+                DispatchQueue.global().async { [self] in
+                    let data = try? Data(contentsOf: imageURL)
+                    if let data = data {
+                        let image = UIImage(data: data)
+                        DispatchQueue.main.async {
+                            cell.imgMenu.image =  image
+                            stoploading()
+                        }
                     }
                 }
             }
+            cell.lblName.text = searchedMenu[indexPath.row].name
+            cell.lbldescrip.text = searchedMenu[indexPath.row].desc
+            cell.lblPrice.text = "$" + String(searchedMenu[indexPath.row].price)
+            
+        } else {
+            let articleVM = self.menuListVM.articleAtIndex(indexPath.row)
+            let paths = String(articleVM.productosMenu[indexPath.row].image)
+            
+            if let imageURL = URL(string:paths) {
+                DispatchQueue.global().async { [self] in
+                    let data = try? Data(contentsOf: imageURL)
+                    if let data = data {
+                        let image = UIImage(data: data)
+                        DispatchQueue.main.async {
+                            cell.imgMenu.image =  image
+                            stoploading()
+                        }
+                    }
+                }
+            }
+            cell.lblName.text = articleVM.productosMenu[indexPath.row].name
+            cell.lbldescrip.text = articleVM.productosMenu[indexPath.row].desc
+            cell.lblPrice.text = "$" + String(articleVM.productosMenu[indexPath.row].price)
         }
-  
-        cell.lblName.text = articleVM.productosMenu[indexPath.row].name
-        cell.lbldescrip.text = articleVM.productosMenu[indexPath.row].desc
-        cell.lblPrice.text = "$" + String(articleVM.productosMenu[indexPath.row].price)
+        
+        
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -121,6 +171,33 @@ extension MenuViewController:  UITableViewDelegate, UITableViewDataSource {
         storyboard.lontitud = productoVM.productosMenu[indexPath.row].longitude
         
         self.navigationController?.pushViewController(storyboard, animated: true)
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchText = searchController.searchBar.text!
+        if !searchText.isEmpty {
+            searching = true
+            searchedMenu.removeAll()
+            for item in menuListVM.productosMenu {
+                if item.name.lowercased().contains(searchText.lowercased())
+                {
+                    searchedMenu.append(item)
+                }
+            }
+        }else{
+            searching = false
+            searchedMenu.removeAll()
+            searchedMenu = menuListVM.productosMenu
+        }
+        
+        tableView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar)
+    {
+        searching = false
+        searchedMenu.removeAll()
+        tableView.reloadData()
     }
    
 }

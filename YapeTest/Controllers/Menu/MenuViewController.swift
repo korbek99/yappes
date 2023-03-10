@@ -161,16 +161,35 @@ extension MenuViewController:  UITableViewDelegate, UITableViewDataSource, UISea
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let productoVM = self.menuListVM.articleAtIndex(indexPath.row)
-        let storyboard = self.storyboard?.instantiateViewController(identifier: "DetailsViewController") as! DetailsViewController
-        storyboard.nombreString = productoVM.productosMenu[indexPath.row].name
-        storyboard.imageString = String(productoVM.productosMenu[indexPath.row].image)
-        storyboard.decripString = productoVM.productosMenu[indexPath.row].desc
-        storyboard.precio = "$" + String(productoVM.productosMenu[indexPath.row].price)
-        storyboard.latitud = productoVM.productosMenu[indexPath.row].latitude
-        storyboard.lontitud = productoVM.productosMenu[indexPath.row].longitude
         
-        self.navigationController?.pushViewController(storyboard, animated: true)
+        if searching {
+            let productoVM = self.menuListVM.articleAtIndex(indexPath.row)
+            let storyboard = self.storyboard?.instantiateViewController(identifier: "DetailsViewController") as! DetailsViewController
+            storyboard.nombreString = searchedMenu[indexPath.row].name
+            storyboard.imageString = String(searchedMenu[indexPath.row].image)
+            storyboard.decripString = searchedMenu[indexPath.row].desc
+            storyboard.precio = "$" + String(searchedMenu[indexPath.row].price)
+            storyboard.latitud = searchedMenu[indexPath.row].latitude
+            storyboard.lontitud = searchedMenu[indexPath.row].longitude
+            
+            self.navigationController?.pushViewController(storyboard, animated: true)
+            
+        } else {
+            let productoVM = self.menuListVM.articleAtIndex(indexPath.row)
+            let storyboard = self.storyboard?.instantiateViewController(identifier: "DetailsViewController") as! DetailsViewController
+            storyboard.nombreString = productoVM.productosMenu[indexPath.row].name
+            storyboard.imageString = String(productoVM.productosMenu[indexPath.row].image)
+            storyboard.decripString = productoVM.productosMenu[indexPath.row].desc
+            storyboard.precio = "$" + String(productoVM.productosMenu[indexPath.row].price)
+            storyboard.latitud = productoVM.productosMenu[indexPath.row].latitude
+            storyboard.lontitud = productoVM.productosMenu[indexPath.row].longitude
+            
+            self.navigationController?.pushViewController(storyboard, animated: true)
+            
+        }
+        
+        
+        
     }
     
     func updateSearchResults(for searchController: UISearchController) {

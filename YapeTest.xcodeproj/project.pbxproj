@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1B003E2730A0943655D35C9A /* Pods_YapeTest_YapeTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98F2F68229847AED8AE4B9D3 /* Pods_YapeTest_YapeTestUITests.framework */; };
+		575D118029C4F994003432F2 /* MenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575D117F29C4F994003432F2 /* MenuRouter.swift */; };
+		575D123329C6401A003432F2 /* CarroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575D123229C6401A003432F2 /* CarroViewController.swift */; };
+		575D123D29C64042003432F2 /* CarroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575D123C29C64042003432F2 /* CarroTableViewCell.swift */; };
 		57822AA629A0133A002575EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57822AA529A0133A002575EB /* AppDelegate.swift */; };
 		57822AA829A0133B002575EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57822AA729A0133B002575EB /* SceneDelegate.swift */; };
 		57822AAD29A0133B002575EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57822AAB29A0133B002575EB /* Main.storyboard */; };
@@ -29,6 +32,7 @@
 		57822D1B29A814B1002575EB /* endpointsDev.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57822D1A29A814B1002575EB /* endpointsDev.plist */; };
 		57822D2029A81536002575EB /* APIEndpointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57822D1F29A81536002575EB /* APIEndpointModel.swift */; };
 		57822D2829A84F71002575EB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 57822D2729A84F71002575EB /* Localizable.strings */; };
+		57D6524A29CF912000228074 /* DetailsNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6524929CF912000228074 /* DetailsNewViewController.swift */; };
 		70068E2EE9FAC9C53FC91E71 /* Pods_YapeTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1499BE9805717867D7E7C150 /* Pods_YapeTest.framework */; };
 		ED94C43EE073F9B42587CC8F /* Pods_YapeTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A8F59EA22A6355B052E7F3 /* Pods_YapeTestTests.framework */; };
 /* End PBXBuildFile section */
@@ -53,6 +57,9 @@
 /* Begin PBXFileReference section */
 		1499BE9805717867D7E7C150 /* Pods_YapeTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YapeTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51F3146C07B3CED12D9217D5 /* Pods-YapeTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YapeTestTests.release.xcconfig"; path = "Target Support Files/Pods-YapeTestTests/Pods-YapeTestTests.release.xcconfig"; sourceTree = "<group>"; };
+		575D117F29C4F994003432F2 /* MenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouter.swift; sourceTree = "<group>"; };
+		575D123229C6401A003432F2 /* CarroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarroViewController.swift; sourceTree = "<group>"; };
+		575D123C29C64042003432F2 /* CarroTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarroTableViewCell.swift; sourceTree = "<group>"; };
 		57822AA229A0133A002575EB /* YapeTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YapeTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57822AA529A0133A002575EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57822AA729A0133B002575EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +87,7 @@
 		57822D1A29A814B1002575EB /* endpointsDev.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = endpointsDev.plist; sourceTree = "<group>"; };
 		57822D1F29A81536002575EB /* APIEndpointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpointModel.swift; sourceTree = "<group>"; };
 		57822D2729A84F71002575EB /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		57D6524929CF912000228074 /* DetailsNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsNewViewController.swift; sourceTree = "<group>"; };
 		70A8F59EA22A6355B052E7F3 /* Pods_YapeTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YapeTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C9169F551EA0D6797FFA5CD /* Pods-YapeTest-YapeTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YapeTest-YapeTestUITests.debug.xcconfig"; path = "Target Support Files/Pods-YapeTest-YapeTestUITests/Pods-YapeTest-YapeTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		98F2F68229847AED8AE4B9D3 /* Pods_YapeTest_YapeTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YapeTest_YapeTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +125,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		575D117E29C4F93F003432F2 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				575D117F29C4F994003432F2 /* MenuRouter.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		575D123129C63FFA003432F2 /* Carro */ = {
+			isa = PBXGroup;
+			children = (
+				575D123A29C6401F003432F2 /* Cells */,
+				575D123229C6401A003432F2 /* CarroViewController.swift */,
+			);
+			path = Carro;
+			sourceTree = "<group>";
+		};
+		575D123A29C6401F003432F2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				575D123C29C64042003432F2 /* CarroTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		57822A9929A0133A002575EB = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +175,8 @@
 		57822AA429A0133A002575EB /* YapeTest */ = {
 			isa = PBXGroup;
 			children = (
+				575D123129C63FFA003432F2 /* Carro */,
+				575D117E29C4F93F003432F2 /* Routing */,
 				57822B5029A03292002575EB /* ViewModels */,
 				57822B4729A03177002575EB /* Views */,
 				57822B4329A03143002575EB /* Services */,
@@ -153,7 +188,6 @@
 				57822AAE29A01346002575EB /* Assets.xcassets */,
 				57822AB029A01346002575EB /* LaunchScreen.storyboard */,
 				57822AB329A01346002575EB /* Info.plist */,
-				57822D1A29A814B1002575EB /* endpointsDev.plist */,
 				57822D2729A84F71002575EB /* Localizable.strings */,
 			);
 			path = YapeTest;
@@ -180,6 +214,7 @@
 		57822AD829A0136F002575EB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				57D6524829CF90EA00228074 /* DetailsNewViewController */,
 				57822AEC29A01420002575EB /* MapViews */,
 				57822AEB29A01413002575EB /* DetailsMenu */,
 				57822AE129A013E7002575EB /* Menu */,
@@ -244,6 +279,7 @@
 		57822B4229A03137002575EB /* EndPoints */ = {
 			isa = PBXGroup;
 			children = (
+				57822D1A29A814B1002575EB /* endpointsDev.plist */,
 			);
 			path = EndPoints;
 			sourceTree = "<group>";
@@ -286,6 +322,14 @@
 				57822AAB29A0133B002575EB /* Main.storyboard */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		57D6524829CF90EA00228074 /* DetailsNewViewController */ = {
+			isa = PBXGroup;
+			children = (
+				57D6524929CF912000228074 /* DetailsNewViewController.swift */,
+			);
+			path = DetailsNewViewController;
 			sourceTree = "<group>";
 		};
 		DE6EC17DC8F9D03F7B05C6E5 /* Frameworks */ = {
@@ -569,6 +613,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				575D123D29C64042003432F2 /* CarroTableViewCell.swift in Sources */,
 				57822D1629A80C5D002575EB /* MapiViewController.swift in Sources */,
 				57822B2329A02CE1002575EB /* HeaderTableViewCell.swift in Sources */,
 				57822B2D29A02D0F002575EB /* FooterTableViewCell.swift in Sources */,
@@ -577,9 +622,12 @@
 				57822B4C29A031E2002575EB /* ProductosList.swift in Sources */,
 				57822ADA29A01397002575EB /* MenuViewController.swift in Sources */,
 				57822AE429A01409002575EB /* MenuTableViewCell.swift in Sources */,
+				575D118029C4F994003432F2 /* MenuRouter.swift in Sources */,
 				57822B5329A032B9002575EB /* MenuListViewModel.swift in Sources */,
+				575D123329C6401A003432F2 /* CarroViewController.swift in Sources */,
 				57822AEE29A0144A002575EB /* DetailsViewController.swift in Sources */,
 				57822AF729A01462002575EB /* MapViewController.swift in Sources */,
+				57D6524A29CF912000228074 /* DetailsNewViewController.swift in Sources */,
 				57822B2829A02CFE002575EB /* BodyTableViewCell.swift in Sources */,
 				57822B5B29A03520002575EB /* webServicesMenu.swift in Sources */,
 				57822D2029A81536002575EB /* APIEndpointModel.swift in Sources */,

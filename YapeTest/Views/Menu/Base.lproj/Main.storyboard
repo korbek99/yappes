@@ -39,6 +39,21 @@
             </objects>
             <point key="canvasLocation" x="1570" y="65"/>
         </scene>
+        <!--Details New View Controller-->
+        <scene sceneID="bcq-Xk-rF4">
+            <objects>
+                <viewController storyboardIdentifier="DetailsNewViewController" id="VEt-h5-p4z" customClass="DetailsNewViewController" customModule="YapeTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="98e-ed-moS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="tQe-CK-EHh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UaN-zl-bLt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1583" y="710"/>
+        </scene>
         <!--Map View Controller-->
         <scene sceneID="T8M-BX-heG">
             <objects>

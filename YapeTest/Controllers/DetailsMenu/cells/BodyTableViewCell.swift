@@ -26,6 +26,7 @@ class BodyTableViewCell: UITableViewCell {
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
+
     // MARK: - init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -50,6 +51,7 @@ class BodyTableViewCell: UITableViewCell {
     func setupUIUX() {
         self.backgroundColor = .white
         addSubview(imgMenuDetail)
+    
         
         imgMenuDetail.topAnchor.constraint(equalTo: topAnchor, constant: 5).isActive = true
         imgMenuDetail.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15).isActive = true
@@ -58,6 +60,7 @@ class BodyTableViewCell: UITableViewCell {
         
         imgMenuDetail.heightAnchor.constraint(equalToConstant: 250).isActive = true
         imgMenuDetail.widthAnchor.constraint(equalToConstant: 250).isActive = true
+
     }
 
     override func awakeFromNib() {

@@ -38,13 +38,13 @@ class FooterTableViewCell: UITableViewCell {
     }
     func setupUIUX() {
         self.backgroundColor = .white
-        addSubview(btnContinuar)
-        btnContinuar.topAnchor.constraint(equalTo: topAnchor, constant: 30).isActive = true
-        btnContinuar.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        btnContinuar.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        
-        btnContinuar.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        btnContinuar.widthAnchor.constraint(equalToConstant: 250).isActive = true
+//        addSubview(btnContinuar)
+//        btnContinuar.topAnchor.constraint(equalTo: topAnchor, constant: 30).isActive = true
+//        btnContinuar.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+//        btnContinuar.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+//        
+//        btnContinuar.heightAnchor.constraint(equalToConstant: 50).isActive = true
+//        btnContinuar.widthAnchor.constraint(equalToConstant: 250).isActive = true
     }
     
     
